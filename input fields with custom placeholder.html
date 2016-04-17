@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+  <meta charset="UTF-8" />
+  <title>input fields with custom placeholder</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
+  <style type="text/css">
+
+  	body {
+  		height: 100%;
+  		width: 100%;
+  		overflow: hidden;
+  		background-color: rgb(92, 236, 68);
+  	}
+  	.main-container {
+  		margin: 5em;
+		padding: 1em;
+		background-color: white;
+		border-radius: 1em;
+		min-height: 20em;
+  	}
+  	.main-container .head {
+  		font-family: 'Poiret One', cursive;
+  		text-align: center;
+		color: #44EC5C;
+		font-size: 3em;
+  	}
+  	.main-container .divider {
+  		background-color: #34E417;
+		height: 0.1em;
+		width: 30%;
+		margin: 0.5em auto;
+  	}
+  	.main-container .head-des {
+  		font-family: 'Arimo', sans-serif;
+  		text-align: center;
+  	}
+  	.start-content {
+  		padding: 2em;
+  	} 
+  	/* .start-content { */
+  		.outerInputdiv {
+  			border: 1px solid grey;
+			position: absolute;
+			padding: 2em;
+			padding-top: 2.5em;
+			border-radius: 0.5em;
+			background-color: rgba(128, 128, 128, 0.04);
+  		}
+  		.customPlaceholder {
+  			position: absolute;
+			font-size: 1em;
+			top: 0;
+			left: 0;
+			margin: 0.5em;
+			margin-left: 1.5em;
+			color: rgba(128, 128, 128, 0.9);
+			transition: all 0.1s ease-out;
+  		}
+  		.customPlaceholder.notFocus {
+  			font-size: 2em;
+			margin-top: 0.8em;
+			color: rgba(128, 128, 128, 0.5);
+  		}
+  		input.customInput {
+  			background-color: transparent;
+			border: none;
+			height: 2.8em;
+			margin: -1em;
+			width: 30em;
+			padding-left: 1.5em;
+			color: #5CEC44;
+			font-size: 1.7em;
+			font-family: 'Arimo', sans-serif;
+		}
+		input.customInput:focus {
+			outline: none;
+		}
+  	/*	} */
+
+  </style>
+
+
+</head>
+<body>
+
+	<div class="main-container">
+		<div class="head">
+			Input fields with custom placeholder!
+		</div>
+		<div class="divider"></div>
+		<p class="head-des"> Hover and click on the text field to test. </p>	
+		<div class="start-content">
+			<div class="outerInputdiv">
+				<div class="customPlaceholder notFocus">
+					Your Name
+				</div>
+				<input class="customInput" type="text" />
+			</div>
+		</div>	
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+		$('.outerInputdiv').click(function() {
+			$('.customPlaceholder').removeClass('notFocus');
+		});
+
+	</script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+  <meta charset="UTF-8" />
+  <title>Full Page Border Menu.html</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
+  <style type="text/css">
+
+  	body {
+  		height: 100%;
+  		width: 100%;
+  		overflow: hidden;
+  		background-color: rgb(92, 236, 68);
+  	}
+  	.main-container {
+  		margin: 5em;
+		padding: 1em;
+		background-color: white;
+		border-radius: 1em;
+		min-height: 20em;
+  	}
+  	.main-container .head {
+  		font-family: 'Poiret One', cursive;
+  		text-align: center;
+		color: #44EC5C;
+		font-size: 3em;
+  	}
+  	.main-container .divider {
+  		background-color: #34E417;
+		height: 0.1em;
+		width: 30%;
+		margin: 0.5em auto;
+  	}
+  	.main-container .head-des {
+  		font-family: 'Arimo', sans-serif;
+  		text-align: center;
+  	}
+  	.start-content {
+  		padding: 2em;
+  	} 
+  	/* .start-content { */
+  		div.buttn {
+  			position: fixed;
+  			bottom: 2%;
+  			right: 1%;
+  		}
+  		span.glyphicon.glyphicon-chevron-left {
+  			font-size: 3em;
+  			cursor: pointer;
+  			transition:all 0.2s;
+  		}
+  		div.border-menu {
+  			position: fixed;
+  			background: rgba(0,0,0,0.1);
+  			top: 0;
+  			left: 0;
+  			bottom: 0;
+  			right: 0;
+  			height: 100%;
+  			width: 100%;
+  			border-bottom: 0em solid #FFBD00;
+  			border-right: 0em solid #FFBD00;
+  			border-top: 0em solid #FFBD00;
+  			border-left: 0em solid #FFBD00;
+  			transition: all 0.3s;
+  			opacity: 0;
+  		}
+  		div.border-menu.active {
+  			border-bottom: 4.5em solid #FFBD00;
+  			border-right: 5em solid #FFBD00;
+  			border-top: 2em solid #FFBD00;
+  			border-left: 2em solid #FFBD00;
+  			opacity: 1;
+  		}
+  		.border-menu-strip {
+  			position: absolute;
+		    bottom: 3%;
+		    right: -4.5%;
+		    font-size: 2em;
+		    line-height: 1.7em;
+  		}
+  		.border-menu-strip span {
+  			cursor: pointer;
+  			transition:all 0.2s;
+  		}	
+  		.border-menu-strip span:hover {
+  			color: black;
+  		}
+  		.border-menu-des {
+  			position: absolute;
+		    bottom: -7%;
+		    right: 1%;
+		    font-size: 1.2em;
+		    transition:all 0.2s;
+		    color: black;
+		    font-family: 'Arimo', sans-serif;
+  		}
+  		.border-menu-inner {
+  			position: absolute;
+  			background: rgba(0,0,0,0);
+  			top: 0;
+  			left: 0;
+  			bottom: 0;
+  			right: 0;
+  			height: 100%;
+  			width: 100%;
+  		}
+  	/*	} */
+
+  </style>
+
+
+</head>
+<body>
+
+	<div class="main-container">
+		<div class="head">
+			Full Page Border Menu
+		</div>
+		<div class="divider"></div>
+		<p class="head-des"> Click on the arrow to expand. </p>	
+		<div class="start-content">
+		</div>	
+	</div>
+
+	<div class="border-menu">
+		<div class="border-menu-inner"></div>
+		<div class="border-menu-strip">
+			<span class="border-menu-icon border-menu-icon-1 glyphicon glyphicon-home"></span>
+			<br />
+			<span class="border-menu-icon border-menu-icon-2 glyphicon glyphicon-trash"></span>
+			<br />
+			<span class="border-menu-icon border-menu-icon-3 glyphicon glyphicon-signal"></span>
+			<br />
+			<span class="border-menu-icon border-menu-icon-4 glyphicon glyphicon-download-alt"></span>
+		</div>
+		<div class="border-menu-des">
+			<span>Pepsi</span>
+		</div>
+	</div>
+
+	<div class="buttn">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+		$('.buttn').on('click', function() {
+			if($('.border-menu').hasClass('active')) {
+				$('.border-menu').removeClass('active');
+				$('span.glyphicon-chevron-left').css('transform','rotate(0deg)');
+			}
+			else {
+				$('.border-menu').addClass('active');	
+				$('span.glyphicon-chevron-left').css('transform','rotate(180deg)');
+			}
+		});
+		$('.border-menu-inner').on('click', function() {
+			$('.border-menu').removeClass('active');
+		});
+
+		$('.border-menu-icon-1').on('mouseover', function() {
+			$('.border-menu-des span').html('Pepsi');
+		});
+		$('.border-menu-icon-2').on('mouseover', function() {
+			$('.border-menu-des span').html('Mountain Dew');
+		});
+		$('.border-menu-icon-3').on('mouseover', function() {
+			$('.border-menu-des span').html('Coka Cola');
+		});
+		$('.border-menu-icon-4').on('mouseover', function() {
+			$('.border-menu-des span').html('Sprite');
+		});
+
+	</script>
+
+ 
+</body>
+</html>
